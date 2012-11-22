@@ -21,6 +21,7 @@ set wildmode=list:longest " make TAB behave like in a shell
 
 set bs=2 " make backspace behave like normal again
 set wildignore+=*.pyc
+set wildignore+=build
 
 set clipboard=unnamed
 set completeopt=longest,menuone
@@ -46,6 +47,7 @@ inoremap <C-n> :nohl<CR>
 
 set history=700
 set undolevels=700
+set nofoldenable
 
 set tabstop=4
 set softtabstop=4
@@ -114,5 +116,5 @@ map <Leader>x :%s/\s\+$//
 set t_Co=256
 color wombat256mod
 
-set colorcolumn=80
+set colorcolumn=120
 highlight ColorColumn ctermbg=233
