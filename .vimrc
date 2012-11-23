@@ -22,6 +22,7 @@ set wildmode=list:longest " make TAB behave like in a shell
 set bs=2 " make backspace behave like normal again
 set wildignore+=*.pyc
 set wildignore+=build
+set wildignore+=cmake
 
 set clipboard=unnamed
 set completeopt=longest,menuone
@@ -110,11 +111,24 @@ map <Leader>a ggVG  " select all
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
 map <Leader>x :%s/\s\+$//
+map <Leader>n :NERDTreeToggle<CR>
 
 " Color scheme
 " =============
 set t_Co=256
 color wombat256mod
 
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=233
+
+hi MBEVisibleActive guifg=#A6DB29 guibg=fg
+hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
+hi MBEVisibleChanged guifg=#F1266F guibg=fg
+hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+hi MBEChanged guifg=#CD5907 guibg=fg
+hi MBENormal guifg=#808080 guibg=fg
+
+" NERDTree settings
+" =================
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
