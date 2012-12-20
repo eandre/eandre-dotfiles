@@ -15,7 +15,7 @@ alias lbf='ssh levelbf.com'
 
 # Git prompt
 source ~/.zsh/git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
+PROMPT='%B%m:%1~%b$(git_super_status) %# '
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/src/virtualenvs
