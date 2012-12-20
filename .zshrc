@@ -19,4 +19,4 @@ PROMPT='%B%m:%1~%b$(git_super_status) %# '
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/src/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+source `which virtualenvwrapper.sh`
