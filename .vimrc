@@ -3,6 +3,10 @@ autocmd! bufwritepost .vimrc source %
 call pathogen#infect()
 
 filetype off
+filetype plugin indent off
+if !empty($GOROOT)
+    set runtimepath+=$GOROOT/misc/vim
+endif
 filetype plugin indent on
 syntax on
 
